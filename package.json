@@ -1,19 +1,22 @@
 {
   "name": "online-chat",
+  "author": "Sergey Kazarinov <kazarinov092@gmail.com> (https://github.com/SergeyKazarinov)",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "source": "index.html",
   "engines": {
     "node": ">= 20.11.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergeyKazarinov/oneline-chat"
+  },
   "scripts": {
-    "dev": "parcel",
+    "dev": "parcel index.html",
     "build": "parcel build index.html"
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
     "parcel": "^2.12.0"
   }
 }
