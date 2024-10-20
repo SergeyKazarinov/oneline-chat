@@ -38,13 +38,10 @@
   --font-line-text: 32px;
   --font-text: 400 var(--font-size-text) / var(--font-line-text) var(--font-family-main);
   --font-text-bold: 700 var(--font-size-text) / var(--font-line-text) var(--font-family-main);
-  --font-size-caption: 16px;
-  --font-line-caption: 24px;
-  --font-caption: 400 var(--font-size-caption) / var(--font-line-caption) var(--font-family-main);
-  --font-size-departments: 16px;
-  --font-line-departments: 20px;
-  --font-departments: 500 var(--font-size-departments) / var(--font-line-departments) var(--font-family-main);
-  --font-size-extra-text: 20px;
-  --font-line-extra-text: 32px;
-  --font-extra-text: 400 var(--font-size-extra-text) / var(--font-line-extra-text) var(--font-family-main);
+  --font-size-label: 16px;
+  --font-line-label: 24px;
+  --font-label: 400 var(--font-size-label) / var(--font-line-label) var(--font-family-main);
+  --font-size-label-mini: 10px;
+  --font-line-label-mini: 16px;
+  --font-label-mini: 400 var(--font-size-label-mini) / var(--font-line-label-mini) var(--font-family-main);
 }

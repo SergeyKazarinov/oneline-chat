@@ -1,0 +1,51 @@
+.form {
+  &__input-wrapper {
+    position: relative;
+    font: var(--font-label);
+    width: 100%;
+  }
+
+  &__label {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    transition: 0.3s;
+    color: var(--secondary);
+  }
+
+  &__input {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 2px solid var(--primary);
+
+    &:focus-visible {
+      outline: none;
+
+      ~ .form__label {
+        color: var(--primary);
+      }
+    }
+
+    &::placeholder {
+      color: var(--secondary);
+      transition: 0.3s;
+    }
+
+    &:not(:focus-visible).form__input::placeholder {
+      opacity: 0;
+    }
+
+    &:focus-visible,
+    &:not(:placeholder-shown).form__input:not(:focus) {
+      ~ .form__label {
+        font: var(--font-label-mini);
+        top: -12px;
+      }
+    }
+
+    &:focus-visible.form__input:placeholder-shown {
+      color: var(--error);
+    }
+  }
+}

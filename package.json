@@ -3,6 +3,7 @@
   "author": "Sergey Kazarinov <kazarinov092@gmail.com> (https://github.com/SergeyKazarinov)",
   "version": "1.0.0",
   "description": "",
+  "license": "ISC",
   "engines": {
     "node": ">= 20.11.0"
   },
@@ -11,10 +12,10 @@
     "url": "git+https://github.com/SergeyKazarinov/oneline-chat"
   },
   "scripts": {
-    "dev": "parcel index.html",
+    "cleanup": "rm -r .parcel-cache dist",
+    "dev": "parcel index.html --no-cache",
     "build": "parcel build index.html"
   },
-  "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
     "parcel": "^2.12.0"
