@@ -98,13 +98,11 @@ class Templator {
 
     if (includeMatches) {
       includeMatches.forEach((includeTag) => {
-        console.log(includeTag)
         const includeData = this._getIncludeData(includeTag);
         const templateNode = this._getTemplateNode(includeTag);
         if (!templateNode) return;
 
         const contextJSON = this._getContextJSON(includeData);
-        console.log(templateNode)
         const contextObject = this._getObjectFromJSON(contextJSON);
         const renderTemplate = this._applyParamsToTemplate(
           templateNode,
@@ -115,6 +113,7 @@ class Templator {
     };
 
     let key = null;
+
     const regExp = TEMPLATE_REGEXP;
 
     while ((key = regExp.exec(tmpl))) {
