@@ -1,3 +1,4 @@
+import { GLOBAL_DEFAULT_VALUE } from '../../utils/consts/default';
 import { DOUBLE_FIGURE_REGEXP, INCLUDE_REGEXP, INCLUDE_REPLACE_REGEXP, TEMPLATE_ATTRIBUTE_REGEXP, TEMPLATE_CONTENT_REGEXP, TEMPLATE_REGEXP, TEMPLATE_REPLACE_ATTRIBUTE_REGEXP } from "../../utils/consts/regexp";
 import get from "../../utils/templator/get";
 
@@ -83,12 +84,19 @@ class Templator {
    * @returns {string} - тот же шаблон, но с подставленными значениями
    */
   _applyParamsToTemplate(template, params) {
-    let renderedTemplate = template;
-    for (const key in params) {
-      const atr = new RegExp(`{{\\s*${key}\\s*}}`, "g");
-      renderedTemplate = renderedTemplate.replace(atr, params[key]);
+    const regExp = TEMPLATE_REGEXP;
+    let key = null;
+
+    let tmpl = template
+    while ((key = regExp.exec(template))) {
+      if (key[1]) {
+        const tmplValue = key[1].trim();
+        const data = get(params, tmplValue, GLOBAL_DEFAULT_VALUE[key[1]]);
+        tmpl = tmpl.replace(new RegExp(key[0], "gi"), data);
+      }
     }
-    return renderedTemplate;
+
+    return tmpl;
   }
 
   _compileTemplate = (context) => {
@@ -112,19 +120,7 @@ class Templator {
       });
     };
 
-    let key = null;
-
-    const regExp = TEMPLATE_REGEXP;
-
-    while ((key = regExp.exec(tmpl))) {
-      if (key[1]) {
-        const tmplValue = key[1].trim();
-        const data = get(context, tmplValue);
-        tmpl = tmpl.replace(new RegExp(key[0], "gi"), data);
-      }
-    }
-
-    return tmpl;
+    return this._applyParamsToTemplate(tmpl, context);
   };
 }
 

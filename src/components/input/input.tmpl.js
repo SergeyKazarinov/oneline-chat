@@ -3,7 +3,7 @@ export const input = (() => {
   <div class="form__input-wrapper">
     <input
       class="form__input"
-      type="{{ type }}"
+      type="{{ inputType }}"
       minLength="{{ minLength }}"
       maxLength="{{ maxLength }}"
       id="{{ id }}"

@@ -9,7 +9,7 @@ export const login = (function () {
           <legend class="form__legend">{{ title }}</legend>
           <include template="{%${input}%}">
             {{
-              "type": "text",
+              "inputType": "text",
               "minLength": "2",
               "maxLength": "40",
               "id": "login-name",
@@ -21,7 +21,7 @@ export const login = (function () {
           </include>
           <include template="{%${input}%}">
           {{
-              "type": "password",
+              "inputType": "password",
               "minLength": "8",
               "maxLength": "40",
               "id": "password",
