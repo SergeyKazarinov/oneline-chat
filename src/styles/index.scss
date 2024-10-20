@@ -11,9 +11,13 @@
 @import './base/margin';
 @import './base/padding';
 
+// mixins
+@import './mixins/form';
+
 // components
 @import "../components/button/button";
 @import "../components/input/input";
 
 //pages
 @import "../pages/login/login";
+@import "../pages/register/register";
