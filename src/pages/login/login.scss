@@ -77,25 +77,11 @@
     }
   }
 
-  &__button {
-    padding: 12px 0;
-    font: var(--font-link);
-
-    &_type {
-      &_submit {
-        margin-top: 150px;
-        color: var(--white);
-        background: var(--primary);
-        border-radius: 14px;
-        border: none;
-      }
-
-      &_switch {
-        margin-top: 16px;
-        background: none;
-        border: none;
-        color: var(--primary);
-      }
-    }
+  &__button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 150px;
   }
 }

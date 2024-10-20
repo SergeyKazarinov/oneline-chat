@@ -1,6 +1,9 @@
-@import "./normalize.scss";
-@import "./fonts/fonts.scss";
-@import "./variables.scss";
-@import "./reset.scss";
+@import "./normalize";
+@import "./fonts/fonts";
+@import "./variables";
+@import "./reset";
 
-@import "../pages/login/login.scss";
+@import "../components/button/button";
+@import "../components/input/input";
+
+@import "../pages/login/login";

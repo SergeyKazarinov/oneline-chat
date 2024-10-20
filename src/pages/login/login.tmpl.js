@@ -1,3 +1,4 @@
+import { button } from '../../components/button/button.tmpl';
 import { input } from "../../components/input/input.tmpl";
 
 export const login = (function () {
@@ -23,12 +24,22 @@ export const login = (function () {
             }}
           </include>
         </fieldset>
-        <button type="submit" class="form__button form__button_type_submit">
-          Войти
-        </button>
-        <button type="button" class="form__button form__button_type_switch">
-          Нет аккаунта?
-        </button>
+        <div class="form__button-container">
+          <include template="{%${button}%}">
+            {{
+              "variant": "primary",
+              "type": "submit",
+              "name": "Войти"
+            }}
+          </include>
+          <include template="{%${button}%}">
+            {{
+              "variant": "clear",
+              "type": "button",
+              "name": "Нет аккаунта?"
+            }}
+          </include>
+        </div>
       </form>
     </section>
   `;
