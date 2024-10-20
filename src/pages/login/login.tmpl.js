@@ -9,18 +9,26 @@ export const login = (function () {
           <legend class="form__legend">{{ title }}</legend>
           <include template="{%${input}%}">
             {{
-              "id": "login",
+              "type": "text",
+              "minLength": "2",
+              "maxLength": "40",
+              "id": "login-name",
               "name": "login",
               "placeholder": "Введите",
-              "label": "Логин"
+              "label": "Логин",
+              "required": "true"
             }}
           </include>
           <include template="{%${input}%}">
-            {{
+          {{
+              "type": "password",
+              "minLength": "8",
+              "maxLength": "40",
               "id": "password",
               "name": "password",
               "placeholder": "Введите",
-              "label": "Пароль"
+              "label": "Пароль",
+              "required": "true"
             }}
           </include>
         </fieldset>
