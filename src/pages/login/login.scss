@@ -7,7 +7,7 @@
 }
 
 .form {
-  padding: 50px 30px 30px;
+  @include padding(40);
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -19,11 +19,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    @include gap(40, 'row');
   }
 
   &__legend {
-    margin: 0 auto 40px auto;
+    margin: 0 auto;
+    @include margin(40, 'bottom');
     font: var(--font-h3);
   }
 
@@ -37,13 +38,14 @@
     position: absolute;
     top: 6px;
     left: 0;
-    transition: 0.3s;
+    transition: var(--hover-transition);
     color: var(--secondary);
   }
 
   &__input {
     width: 100%;
-    padding: 8px 0;
+    @include padding(8, 'top');
+    @include padding(8, 'bottom');
     border: none;
     border-bottom: 2px solid var(--primary);
 
@@ -57,7 +59,7 @@
 
     &::placeholder {
       color: var(--secondary);
-      transition: 0.3s;
+      transition: var(--hover-transition);
     }
 
     &:not(:focus-visible).form__input::placeholder {
@@ -81,7 +83,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 150px;
+    @include gap(16);
+    @include margin(140, 'top');
   }
 }

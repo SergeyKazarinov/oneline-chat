@@ -7,20 +7,27 @@
 
   &__label {
     position: absolute;
-    top: 6px;
+    top: 0.313vw;
     left: 0;
-    transition: 0.3s;
+    transition: var(--hover-transition);
     color: var(--secondary);
   }
 
   &__input {
     width: 100%;
-    padding: 8px 0;
+    @include padding(8, 'top');
+    @include padding(8, 'bottom');
     border: none;
     border-bottom: 2px solid var(--primary);
+    transition: var(--hover-transition);
+
+    &:hover {
+      border-color: var(--primary-20);
+    }
 
     &:focus-visible {
       outline: none;
+      border-color: var(--primary-20);
 
       ~ .form__label {
         color: var(--primary);
@@ -29,7 +36,7 @@
 
     &::placeholder {
       color: var(--secondary);
-      transition: 0.3s;
+      transition: var(--hover-transition);
     }
 
     &:not(:focus-visible).form__input::placeholder {
