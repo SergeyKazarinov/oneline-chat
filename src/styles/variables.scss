@@ -44,4 +44,8 @@
   --font-size-label-mini: 0.625rem;
   --font-line-label-mini: 1rem;
   --font-label-mini: 400 var(--font-size-label-mini) / var(--font-line-label-mini) var(--font-family-main);
+
+  // animation
+  --hover-transition: 0.3s;
+  --scale-animation: 0.96;
 }
