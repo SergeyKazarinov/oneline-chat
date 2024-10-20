@@ -3,7 +3,17 @@
 @import "./variables";
 @import "./reset";
 
+// maps
+@import "./maps/indents";
+
+// base
+@import './base/gap';
+@import './base/margin';
+@import './base/padding';
+
+// components
 @import "../components/button/button";
 @import "../components/input/input";
 
+//pages
 @import "../pages/login/login";

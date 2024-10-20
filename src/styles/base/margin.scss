@@ -1,0 +1,21 @@
+@function margin($key) {
+    @if map-has-key($indents, $key) {
+      @return map-get($indents, $key);
+    }
+
+    @return 4;
+}
+
+@mixin margin($key: 4, $type: false) {
+  @if $type {
+    margin-#{$type}: margin($key);
+  } @else {
+    margin: margin($key);
+  }
+}
+
+/********
+
+@include margin($indents?, type?: 'top' | 'bottom' | 'left' | 'right');
+
+*********/
