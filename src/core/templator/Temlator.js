@@ -1,5 +1,14 @@
-import { GLOBAL_DEFAULT_VALUE } from '../../utils/consts/default';
-import { DOUBLE_FIGURE_REGEXP, INCLUDE_REGEXP, INCLUDE_REPLACE_REGEXP, TEMPLATE_ATTRIBUTE_REGEXP, TEMPLATE_CONTENT_REGEXP, TEMPLATE_REGEXP, TEMPLATE_REPLACE_ATTRIBUTE_REGEXP } from "../../utils/consts/regexp";
+import { GLOBAL_DEFAULT_VALUE } from "../../utils/consts/default";
+import {
+  CONTAINER_TAG_REGEXP,
+  DOUBLE_FIGURE_REGEXP,
+  INCLUDE_REGEXP,
+  INCLUDE_REPLACE_REGEXP,
+  SRC_ATTRIBUTE_REGEXP,
+  SRC_CONTENT_REGEXP,
+  TEMPLATE_REGEXP,
+  SRC_REPLACE_ATTRIBUTE_REGEXP,
+} from "../../utils/consts/regexp";
 import get from "../../utils/templator/get";
 
 class Templator {
@@ -10,16 +19,6 @@ class Templator {
   compile(context) {
     return this._compileTemplate(context);
   }
-
-  _loadTemplate = async (url) => {
-    const response = await fetch(url);
-    if (response.ok) {
-      return await response.text();
-    } else {
-      throw new Error(`Не удалось загрузить шаблон: ${url}`);
-    }
-  };
-
 
   /**
    * Преобразует данные из шаблона в JSON объект
@@ -32,7 +31,6 @@ class Templator {
       match === "{{" ? "{" : "}"
     );
   }
-
 
   /**
    * Преобразует JSON в объект
@@ -57,11 +55,10 @@ class Templator {
    * @returns
    */
   _getIncludeData(includeTag) {
-    const removedTemplateAtr = includeTag.replace(TEMPLATE_CONTENT_REGEXP, '');
-    const includeData = removedTemplateAtr.replace(INCLUDE_REPLACE_REGEXP, '');
+    const removedTemplateAtr = includeTag.replace(SRC_CONTENT_REGEXP, "");
+    const includeData = removedTemplateAtr.replace(INCLUDE_REPLACE_REGEXP, "");
     return includeData.trim();
   }
-
 
   /**
    * Получает dom-ноду внутри аттрибута template тега <include template=...>
@@ -70,11 +67,12 @@ class Templator {
    * @returns {*}
    */
   _getTemplateNode(includeTag) {
-    const template = includeTag.match(TEMPLATE_ATTRIBUTE_REGEXP);
+    const template = includeTag.match(SRC_ATTRIBUTE_REGEXP);
 
-    return template ? template[0].replace(TEMPLATE_REPLACE_ATTRIBUTE_REGEXP, '') : '';
+    return template
+      ? template[0].replace(SRC_REPLACE_ATTRIBUTE_REGEXP, "")
+      : "";
   }
-
 
   /**
    * Заменяет значения ключей шаблонов на значения объекта
@@ -87,7 +85,7 @@ class Templator {
     const regExp = TEMPLATE_REGEXP;
     let key = null;
 
-    let tmpl = template
+    let tmpl = template;
     while ((key = regExp.exec(template))) {
       if (key[1]) {
         const tmplValue = key[1].trim();
@@ -118,7 +116,7 @@ class Templator {
         );
         tmpl = tmpl.replace(includeTag, renderTemplate);
       });
-    };
+    }
 
     return this._applyParamsToTemplate(tmpl, context);
   };

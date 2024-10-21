@@ -1,4 +1,4 @@
-import { button } from '../../components/button/button.tmpl';
+import { button } from "../../components/button/button.tmpl";
 import { input } from "../../components/input/input.tmpl";
 
 export const login = (function () {
@@ -7,7 +7,7 @@ export const login = (function () {
       <form id="login" class="form">
         <fieldset class="form__fieldset">
           <legend class="form__legend">{{ title }}</legend>
-          <include template="{%${input}%}">
+          <include scr="{%${input}%}">
             {{
               "inputType": "text",
               "minLength": "2",
@@ -19,7 +19,7 @@ export const login = (function () {
               "required": "true"
             }}
           </include>
-          <include template="{%${input}%}">
+          <include scr="{%${input}%}">
           {{
               "inputType": "password",
               "minLength": "8",
@@ -33,14 +33,14 @@ export const login = (function () {
           </include>
         </fieldset>
         <div class="form__button-container">
-          <include template="{%${button}%}">
+          <include scr="{%${button}%}">
             {{
               "variant": "primary",
               "type": "submit",
               "name": "Войти"
             }}
           </include>
-          <include template="{%${button}%}">
+          <include scr="{%${button}%}">
             {{
               "variant": "clear",
               "type": "button",

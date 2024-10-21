@@ -1,4 +1,4 @@
-import { button } from '../../components/button/button.tmpl';
+import { button } from "../../components/button/button.tmpl";
 import { input } from "../../components/input/input.tmpl";
 
 export const register = (function () {
@@ -7,7 +7,7 @@ export const register = (function () {
       <form id="register" class="form">
         <fieldset class="form__fieldset">
           <legend class="form__legend">{{ title }}</legend>
-          <include template="{%${input}%}">
+          <include src="{%${input}%}">
             {{
               "inputType": "email",
               "minLength": "4",
@@ -19,7 +19,7 @@ export const register = (function () {
               "required": "true"
             }}
           </include>
-          <include template="{%${input}%}">
+          <include src="{%${input}%}">
             {{
               "inputType": "text",
               "minLength": "2",
@@ -31,7 +31,7 @@ export const register = (function () {
               "required": "true"
             }}
           </include>
-          <include template="{%${input}%}">
+          <include src="{%${input}%}">
             {{
               "inputType": "text",
               "minLength": "2",
@@ -43,7 +43,7 @@ export const register = (function () {
               "required": "true"
             }}
           </include>
-          <include template="{%${input}%}">
+          <include src="{%${input}%}">
             {{
               "inputType": "text",
               "minLength": "2",
@@ -55,7 +55,7 @@ export const register = (function () {
               "required": "true"
             }}
           </include>
-          <include template="{%${input}%}">
+          <include src="{%${input}%}">
             {{
               "inputType": "phone",
               "minLength": "18",
@@ -67,7 +67,7 @@ export const register = (function () {
               "required": "true"
             }}
           </include>
-          <include template="{%${input}%}">
+          <include src="{%${input}%}">
             {{
                 "inputType": "password",
                 "minLength": "8",
@@ -79,7 +79,7 @@ export const register = (function () {
                 "required": "true"
               }}
           </include>
-          <include template="{%${input}%}">
+          <include src="{%${input}%}">
             {{
                 "inputType": "password",
                 "minLength": "8",
@@ -93,14 +93,14 @@ export const register = (function () {
           </include>
         </fieldset>
         <div class="form__button-container">
-          <include template="{%${button}%}">
+          <include src="{%${button}%}">
             {{
               "variant": "primary",
               "type": "submit",
               "name": "Зарегистрироваться"
             }}
           </include>
-          <include template="{%${button}%}">
+          <include src="{%${button}%}">
             {{
               "variant": "clear",
               "type": "button",
