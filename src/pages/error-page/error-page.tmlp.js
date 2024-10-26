@@ -1,11 +1,11 @@
 import { servicePage } from "../../components/service-page/service-page.tmpl";
 
-export const notFound = (function () {
+export const errorPage = (function () {
   return `
     <include src="{%${servicePage}%}">
       {{
-        "title": "404",
-        "text": "Такой страницы не существует",
+        "title": "500",
+        "text": "Мы уже фиксим",
         "textLink": "Назад к чатам",
         "link": "/"
       }}
