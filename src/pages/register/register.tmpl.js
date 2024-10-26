@@ -1,5 +1,5 @@
-import { button } from "../../components/button/button.tmpl";
-import { input } from "../../components/input/input.tmpl";
+import { button } from "../../components/ui-kit/button/button.tmpl";
+import { input } from "../../components/ui-kit/input/input.tmpl";
 
 export const register = (function () {
   return `

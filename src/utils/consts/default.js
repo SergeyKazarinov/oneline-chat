@@ -1,17 +1,18 @@
 // Глобальная переменная дефолтных значений
 
 const INPUT_DEFAULT_VALUE = {
-  inputType: 'text',
+  inputType: "text",
   minLength: 0,
   maxLength: 255,
-}
+};
 
 const BUTTON_DEFAULT_VALUE = {
-  buttonType: 'button'
-}
+  buttonType: "button",
+  name: "",
+};
 
 export const GLOBAL_DEFAULT_VALUE = {
-  variant: 'primary',
+  variant: "primary",
   ...INPUT_DEFAULT_VALUE,
   ...BUTTON_DEFAULT_VALUE,
-}
+};

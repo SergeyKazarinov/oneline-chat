@@ -14,9 +14,9 @@
 // mixins
 @import "./mixins/form";
 
-// components
-@import "../components/button/button";
-@import "../components/input/input";
+// ui-kit
+@import "../components/ui-kit/button/button";
+@import "../components/ui-kit/input/input";
 
 //pages
 @import "../pages/login/login";

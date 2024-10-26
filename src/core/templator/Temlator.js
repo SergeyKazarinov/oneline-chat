@@ -1,6 +1,5 @@
 import { GLOBAL_DEFAULT_VALUE } from "../../utils/consts/default";
 import {
-  CONTAINER_TAG_REGEXP,
   DOUBLE_FIGURE_REGEXP,
   INCLUDE_REGEXP,
   INCLUDE_REPLACE_REGEXP,
@@ -84,12 +83,11 @@ class Templator {
   _applyParamsToTemplate(template, params) {
     const regExp = TEMPLATE_REGEXP;
     let key = null;
-
     let tmpl = template;
     while ((key = regExp.exec(template))) {
       if (key[1]) {
         const tmplValue = key[1].trim();
-        const data = get(params, tmplValue, GLOBAL_DEFAULT_VALUE[key[1]]);
+        const data = get(params, tmplValue, GLOBAL_DEFAULT_VALUE[tmplValue]);
         tmpl = tmpl.replace(new RegExp(key[0], "gi"), data);
       }
     }
