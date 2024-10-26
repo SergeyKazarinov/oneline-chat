@@ -1,0 +1,23 @@
+.service-page {
+  @include page;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @include gap(18, "row");
+
+  &__title {
+    font: var(--font-h1);
+  }
+
+  &__text {
+    font: var(--font-navigation);
+  }
+
+  &__link {
+    font: var(--font-links);
+    @include margin(140, "top");
+  }
+}

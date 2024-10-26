@@ -13,10 +13,14 @@
 
 // mixins
 @import "./mixins/form";
+@import "./mixins/page";
 
 // ui-kit
 @import "../components/ui-kit/button/button";
 @import "../components/ui-kit/input/input";
+
+// components
+@import "../components/service-page/service-page.scss";
 
 //pages
 @import "../pages/login/login";
