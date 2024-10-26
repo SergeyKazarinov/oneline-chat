@@ -7,11 +7,11 @@
 }
 
 @mixin padding($key: 4, $type: false) {
-@if $type {
-  padding-#{$type}: padding($key);
-} @else {
-  padding: padding($key);
-}
+  @if $type {
+    padding-#{$type}: padding($key);
+  } @else {
+    padding: padding($key);
+  }
 }
 
 /********

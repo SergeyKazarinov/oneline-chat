@@ -1,9 +1,9 @@
 @function margin($key) {
-    @if map-has-key($indents, $key) {
-      @return map-get($indents, $key);
-    }
+  @if map-has-key($indents, $key) {
+    @return map-get($indents, $key);
+  }
 
-    @return 4;
+  @return 4;
 }
 
 @mixin margin($key: 4, $type: false) {

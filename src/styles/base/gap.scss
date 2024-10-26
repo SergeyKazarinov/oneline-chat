@@ -1,5 +1,4 @@
 @function gap($key) {
-
   @if map-has-key($indents, $key) {
     @return map-get($indents, $key);
   }
