@@ -13,8 +13,9 @@
   },
   "scripts": {
     "cleanup": "rm -r .parcel-cache dist",
-    "dev": "parcel index.html --no-cache",
-    "build": "parcel build index.html"
+    "copy": "cp -vR ./public/ ./dist/public/",
+    "dev": "parcel index.html & npm run copy",
+    "build": "parcel build index.html & npm run copy"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",

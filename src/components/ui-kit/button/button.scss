@@ -1,6 +1,6 @@
 .button {
-  @include padding(12, 'top');
-  @include padding(12, 'bottom');
+  @include padding(12, "top");
+  @include padding(12, "bottom");
   font: var(--font-link);
   transition: var(--hover-transition);
 
@@ -9,10 +9,10 @@
   }
 
   &_type {
-    &_primary {
+    &_primary,
+    &_circle {
       color: var(--white);
       background: var(--primary);
-      border-radius: 14px;
       border: none;
 
       &:hover {
@@ -20,14 +20,34 @@
       }
     }
 
+    &_primary {
+      border-radius: 14px;
+    }
+
     &_clear {
       background: none;
       border: none;
       color: var(--primary);
+      font: var(--font-text-medium);
 
       &:hover {
         color: var(--primary-20);
       }
+    }
+
+    &_circle {
+      border-radius: 50%;
+      @include padding(0);
+    }
+  }
+
+  &_text-color {
+    &_primary {
+      color: var(--primary);
+    }
+
+    &_error {
+      color: var(--error);
     }
   }
 }

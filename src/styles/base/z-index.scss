@@ -1,0 +1,28 @@
+// prettier-ignore
+
+$z-index: (
+    popup            : 140,
+    menu-action      : 120,
+    menu-mobile      : 100,
+    overlay          : 80,
+    header           : 20,
+    fixed-wrap       : 18,
+    project-next     : 18,
+    content          : 4,
+    card             : 2,
+    default          : 1
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
+/********
+
+@include z-index(default);
+
+*********/

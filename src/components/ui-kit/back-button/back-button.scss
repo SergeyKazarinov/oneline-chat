@@ -1,0 +1,27 @@
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--bg-back-secondary);
+  border-right: 1px solid var(--bg-secondary);
+  @include padding(20, "left");
+  @include padding(20, "right");
+  @include z-index(default);
+
+  &:hover {
+    cursor: pointer;
+
+    .back__button {
+      fill: var(--primary-20);
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    fill: var(--primary);
+    transition: fill var(--hover-transition);
+  }
+}

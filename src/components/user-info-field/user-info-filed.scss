@@ -1,0 +1,20 @@
+.userInfoFiled {
+  display: flex;
+  justify-content: space-between;
+  @include padding(8, "top");
+  @include padding(8, "bottom");
+  border-bottom: 1px solid var(--bg-secondary-20);
+
+  &:last-child {
+    border: none;
+  }
+
+  &__key {
+    font: var(--font-label-medium);
+  }
+
+  &__value {
+    font: var(--font-text);
+    color: var(--bg-secondary-20);
+  }
+}

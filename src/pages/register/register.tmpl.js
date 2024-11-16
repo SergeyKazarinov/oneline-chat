@@ -96,14 +96,14 @@ export const register = (function () {
           <include src="{%${button}%}">
             {{
               "variant": "primary",
-              "type": "submit",
+              "buttonType": "submit",
               "name": "Зарегистрироваться"
             }}
           </include>
           <include src="{%${button}%}">
             {{
               "variant": "clear",
-              "type": "button",
+              "buttonType": "button",
               "name": "Войти"
             }}
           </include>

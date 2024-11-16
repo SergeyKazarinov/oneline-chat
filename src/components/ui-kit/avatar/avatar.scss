@@ -1,0 +1,10 @@
+.avatar {
+  border-radius: 100%;
+  border-width: 0;
+  height: 120px;
+  width: 120px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

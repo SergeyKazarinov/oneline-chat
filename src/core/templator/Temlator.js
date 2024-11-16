@@ -26,6 +26,8 @@ class Templator {
    * @returns {JSON}
    */
   _getContextJSON(includeData) {
+    if (!includeData) return "{}";
+
     return includeData.replace(DOUBLE_FIGURE_REGEXP, (match) =>
       match === "{{" ? "{" : "}"
     );
@@ -95,24 +97,28 @@ class Templator {
     return tmpl;
   }
 
+  _compileInclude(template, includeTag) {
+    const includeData = this._getIncludeData(includeTag);
+    const templateNode = this._getTemplateNode(includeTag);
+    if (!templateNode) return;
+
+    const contextJSON = this._getContextJSON(includeData);
+    const contextObject = this._getObjectFromJSON(contextJSON);
+    const renderTemplate = this._applyParamsToTemplate(
+      templateNode,
+      contextObject
+    );
+
+    return template.replace(includeTag, renderTemplate);
+  }
+
   _compileTemplate = (context) => {
     let tmpl = this._template; // корневой шаблон в виде строки
 
     const includeMatches = tmpl.match(INCLUDE_REGEXP); // находим все инклюсдсы
-
     if (includeMatches) {
       includeMatches.forEach((includeTag) => {
-        const includeData = this._getIncludeData(includeTag);
-        const templateNode = this._getTemplateNode(includeTag);
-        if (!templateNode) return;
-
-        const contextJSON = this._getContextJSON(includeData);
-        const contextObject = this._getObjectFromJSON(contextJSON);
-        const renderTemplate = this._applyParamsToTemplate(
-          templateNode,
-          contextObject
-        );
-        tmpl = tmpl.replace(includeTag, renderTemplate);
+        tmpl = this._compileInclude(tmpl, includeTag);
       });
     }
 

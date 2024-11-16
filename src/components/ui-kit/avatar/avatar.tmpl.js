@@ -1,0 +1,13 @@
+export const avatar = (() => {
+  return `
+  <button class="avatar">
+    <picture>
+      <source srcset="public/images/default.jpg" media="(max-width: 480px)" />
+      <source srcset="public/images/default.jpg" media="(max-width: 769px)" />
+      <source srcset="public/images/default.jpg" media="(max-width: 1200px)" />
+      <source srcset="public/images/default.jpg" media="(max-width: 1441px)" />
+      <img src="public/images/default.jpg" alt="Аватар" />
+    </picture>
+  </button>
+  `;
+})();

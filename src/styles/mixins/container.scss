@@ -1,0 +1,3 @@
+@mixin width-container {
+  width: clamp(300px, 40%, 500px);
+}
