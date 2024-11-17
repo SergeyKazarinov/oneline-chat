@@ -90,6 +90,17 @@ class Templator {
       if (key[1]) {
         const tmplValue = key[1].trim();
         const data = get(params, tmplValue, GLOBAL_DEFAULT_VALUE[tmplValue]);
+        console.log(data);
+        if (typeof data === "function") {
+          window[tmplValue] = data;
+
+          tmpl = tmpl.replace(
+            new RegExp(key[0], "gi"),
+            `window.${key[1].trim()}()`
+          );
+          continue;
+        }
+
         tmpl = tmpl.replace(new RegExp(key[0], "gi"), data);
       }
     }
