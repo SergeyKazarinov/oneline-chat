@@ -1,6 +1,5 @@
 .button {
-  @include padding(12, "top");
-  @include padding(12, "bottom");
+  @include padding(12);
   font: var(--font-link);
   transition: var(--hover-transition);
 

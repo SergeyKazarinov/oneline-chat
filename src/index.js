@@ -1,3 +1,4 @@
+import { Modal } from "./components/modal/Modal";
 import Templator from "./core/templator/Temlator";
 import { sum } from "./modules/sum";
 import { errorPage } from "./pages/error-page/error-page.tmlp";
@@ -15,3 +16,10 @@ const context = {
 
 const renderedTemplate = tmpl.compile(context); // Строка с html-вёрсткой
 root.innerHTML = renderedTemplate; // Показался нужный результат
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector("[data-js=change-data]");
+  const modal = new Modal(".modal");
+
+  btn.addEventListener("click", modal.openModal);
+});

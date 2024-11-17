@@ -1,6 +1,7 @@
 import { avatar } from "../../components/ui-kit/avatar/avatar.tmpl";
 import { backButton } from "../../components/ui-kit/back-button/back-button.tmpl";
 import { button } from "../../components/ui-kit/button/button.tmpl";
+import { input } from "../../components/ui-kit/input/input.tmpl";
 import { userInfoField } from "../../components/user-info-field/user-info-field.tmpl";
 
 export const profile = (function () {
@@ -61,7 +62,9 @@ export const profile = (function () {
             <include src="{%${button}%}">
               {{
                 "variant": "clear",
-                "name": "Изменить данные"
+                "color": "clear",
+                "name": "Изменить данные",
+                "dataJS": "change-data"
               }}
             </include>
           </li>
@@ -69,7 +72,9 @@ export const profile = (function () {
             <include src="{%${button}%}">
               {{
                 "variant": "clear",
-                "name": "Изменить пароль"
+                "color": "clear",
+                "name": "Изменить пароль",
+                "dataJS": "change-password"
               }}
             </include>
             </li>
@@ -78,11 +83,114 @@ export const profile = (function () {
               {{
                 "variant": "clear",
                 "name": "Выйти",
-                "color": "error"
+                "color": "error",
+                "dataJS": "exit"
               }}
             </include>
           </li>
       </ul>
+    </section>
+
+    <section class="profile__modal modal">
+      <div class="modal__overlay"></div>
+      <form class="profile__edit-container modal__container">
+        <fieldset class="form__fieldset">
+          <legend class="profile__edit-title form__legend">Редактировать профиль</legend>
+          <include src="{%${input}%}">
+            {{
+              "inputType": "email",
+              "minLength": "4",
+              "maxLength": "60",
+              "id": "email",
+              "name": "email",
+              "placeholder": "Введите e-mail",
+              "label": "E-mail",
+              "required": "true"
+            }}
+          </include>
+          <include src="{%${input}%}">
+            {{
+              "inputType": "text",
+              "minLength": "2",
+              "maxLength": "40",
+              "id": "login-name",
+              "name": "login",
+              "placeholder": "Введите",
+              "label": "Логин",
+              "required": "true"
+            }}
+          </include>
+          <include src="{%${input}%}">
+          {{
+            "inputType": "text",
+            "minLength": "2",
+            "maxLength": "40",
+            "id": "first_name",
+            "name": "first_name",
+            "placeholder": "Введите",
+            "label": "Имя",
+            "required": "true"
+          }}
+        </include>
+        <include src="{%${input}%}">
+            {{
+              "inputType": "text",
+              "minLength": "2",
+              "maxLength": "40",
+              "id": "second_name",
+              "name": "second_name",
+              "placeholder": "Введите",
+              "label": "Фамилия",
+              "required": "true"
+            }}
+          </include>
+          <include src="{%${input}%}">
+            {{
+              "inputType": "text",
+              "minLength": "1",
+              "maxLength": "18",
+              "id": "nick",
+              "name": "nick",
+              "placeholder": "Введите",
+              "label": "Имя в чате",
+              "required": "true"
+            }}
+          </include>
+          <include src="{%${input}%}">
+            {{
+              "inputType": "phone",
+              "minLength": "18",
+              "maxLength": "18",
+              "id": "phone",
+              "name": "phone",
+              "placeholder": "Введите",
+              "label": "Телефон",
+              "required": "true"
+            }}
+          </include>
+        </fieldset>
+      <div class="profile__button-container">
+          <include src="{%${button}%}">
+            {{
+              "class": "profile__btn_submit",
+              "variant": "primary",
+              "buttonType": "submit",
+              "dataJS": "submit",
+              "name": "Сохранить"
+            }}
+          </include>
+          <include src="{%${button}%}">
+            {{
+              "class": "profile__btn_exit",
+              "variant": "clear",
+              "color": "error",
+              "buttonType": "button",
+              "dataJS": "exit",
+              "name": "Закрыть"
+            }}
+          </include>
+        </div>
+      </form>
     </section>
 
   </div>
