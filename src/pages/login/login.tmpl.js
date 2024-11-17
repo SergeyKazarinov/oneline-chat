@@ -37,12 +37,14 @@ export const login = (function () {
             {{
               "variant": "primary",
               "buttonType": "submit",
+
               "name": "Войти"
             }}
           </include>
           <include src="{%${button}%}">
             {{
               "variant": "clear",
+              "color": "clear",
               "buttonType": "button",
               "name": "Нет аккаунта?"
             }}

@@ -42,8 +42,12 @@
   }
 
   &_text-color {
-    &_primary {
+    &_clear {
       color: var(--primary);
+    }
+
+    &_primary {
+      color: var(--white);
     }
 
     &_error {

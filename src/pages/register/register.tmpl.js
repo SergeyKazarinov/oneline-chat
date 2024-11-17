@@ -103,6 +103,7 @@ export const register = (function () {
           <include src="{%${button}%}">
             {{
               "variant": "clear",
+              "color": "clear",
               "buttonType": "button",
               "name": "Войти"
             }}
