@@ -91,7 +91,7 @@ export const profile = (function () {
       </ul>
     </section>
 
-    <section class="profile__modal modal">
+    <section class="profile__modal modal" data-js="profile-modal-edit">
       <div class="modal__overlay"></div>
       <form class="profile__edit-container modal__container">
         <fieldset class="form__fieldset">
@@ -169,7 +169,74 @@ export const profile = (function () {
             }}
           </include>
         </fieldset>
-      <div class="profile__button-container">
+        <div class="profile__button-container">
+          <include src="{%${button}%}">
+            {{
+              "class": "profile__btn_submit",
+              "variant": "primary",
+              "buttonType": "submit",
+              "dataJS": "submit",
+              "name": "Сохранить"
+            }}
+          </include>
+          <include src="{%${button}%}">
+            {{
+              "class": "profile__btn_exit",
+              "variant": "clear",
+              "color": "error",
+              "buttonType": "button",
+              "dataJS": "exit",
+              "name": "Закрыть"
+            }}
+          </include>
+        </div>
+      </form>
+    </section>
+
+    <section class="profile__modal modal" data-js="profile-modal-password">
+      <div class="modal__overlay"></div>
+      <form class="profile__edit-container modal__container">
+        <fieldset class="form__fieldset">
+          <legend class="profile__edit-title form__legend">Сменить пароль</legend>
+          <include src="{%${input}%}">
+            {{
+              "inputType": "password",
+              "minLength": "8",
+              "maxLength": "40",
+              "id": "oldPassword",
+              "name": "oldPassword",
+              "placeholder": "Введите текущий пароль",
+              "label": "Текущий пароль",
+              "required": "true"
+            }}
+          </include>
+          <include src="{%${input}%}">
+            {{
+              "inputType": "password",
+              "minLength": "8",
+              "maxLength": "40",
+              "id": "newPassword",
+              "name": "newPassword",
+              "placeholder": "Введите новый пароль",
+              "label": "Новый пароль",
+              "required": "true"
+            }}
+          </include>
+          <include src="{%${input}%}">
+            {{
+              "inputType": "password",
+              "minLength": "8",
+              "maxLength": "40",
+              "id": "newPasswordAgain",
+              "name": "newPasswordAgain",
+              "placeholder": "Повторите новый пароль",
+              "label": "Повторите новый пароль",
+              "required": "true"
+            }}
+          </include>
+        </fieldset>
+
+        <div class="profile__button-container">
           <include src="{%${button}%}">
             {{
               "class": "profile__btn_submit",

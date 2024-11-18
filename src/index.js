@@ -18,8 +18,13 @@ const renderedTemplate = tmpl.compile(context); // Строка с html-вёрс
 root.innerHTML = renderedTemplate; // Показался нужный результат
 
 document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector("[data-js=change-data]");
-  const modal = new Modal(".modal");
+  const editBtn = document.querySelector("[data-js=change-data]");
+  const changePasswordBtn = document.querySelector(
+    "[data-js=change-password  ]"
+  );
+  const profileModal = new Modal("[data-js=profile-modal-edit]");
+  const passwordModal = new Modal("[data-js=profile-modal-password]");
 
-  btn.addEventListener("click", modal.openModal);
+  editBtn.addEventListener("click", profileModal.openModal);
+  changePasswordBtn.addEventListener("click", passwordModal.openModal);
 });
