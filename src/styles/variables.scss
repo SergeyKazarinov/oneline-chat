@@ -1,22 +1,46 @@
-:root {
-  // colors
-  --primary: #3369f3;
-  --primary-20: rgba(102, 156, 255, 0.8);
-  --active-chat: #bdd5ff;
-  --secondary: #999999;
-  --secondary-20: rgba(153, 153, 153, 0.8);
-  --text-base: #1e1e1e;
-  --text-base-60: rgba(30, 30, 30, 60%);
-  --error: #ff2f2f;
-  --error-20: #ff6262;
-  --white: #fff;
-  --bg-base: #fff;
-  --bg-secondary: #efefef;
-  --bg-back-secondary: #fbfbfb;
-  --bg-secondary-20: #bcbcbc;
-  --bg-secondary-50: #7f7f7f;
-  --overlay: #00000080;
+@media (prefers-color-scheme: light) {
+  :root {
+    // colors
+    --primary: #3369f3;
+    --primary-20: rgba(102, 156, 255, 0.8);
+    --active-chat: #bdd5ff;
+    --secondary: #999999;
+    --secondary-20: rgba(153, 153, 153, 0.8);
+    --text-base: #1e1e1e;
+    --text-base-60: rgba(30, 30, 30, 60%);
+    --error: #ff2f2f;
+    --error-20: #ff6262;
+    --bg-base: #fff;
+    --bg-secondary: #efefef;
+    --bg-back-secondary: #fbfbfb;
+    --bg-secondary-20: #bcbcbc;
+    --bg-secondary-50: #7f7f7f;
+    --overlay: #00000080;
+  }
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    // colors
+    --primary: #3369f3;
+    --primary-20: rgba(102, 156, 255, 0.8);
+    --active-chat: #bdd5ff;
+    --secondary: #999999;
+    --secondary-20: rgba(153, 153, 153, 0.8);
+    --text-base: #1e1e1e;
+    --text-base-60: rgba(30, 30, 30, 60%);
+    --error: #ff2f2f;
+    --error-20: #ff6262;
+    --bg-base: #fff;
+    --bg-secondary: #efefef;
+    --bg-back-secondary: #fbfbfb;
+    --bg-secondary-20: #bcbcbc;
+    --bg-secondary-50: #7f7f7f;
+    --overlay: #00000080;
+  }
+}
+
+:root {
   // typography
   --font-family-main: "Fira Sans", system-ui, avenir, helvetica, arial, sans-serif;
   --font-size-h1: 6rem;
@@ -45,6 +69,7 @@
   --font-size-label: 1rem;
   --font-line-label: 1.25rem;
   --font-label: 400 var(--font-size-label) / var(--font-line-label) var(--font-family-main);
+  --font-label-medium: 600 var(--font-size-label) / var(--font-line-label) var(--font-family-main);
   --font-size-label-mini: 0.625rem;
   --font-line-label-mini: 1rem;
   --font-label-mini: 400 var(--font-size-label-mini) / var(--font-line-label-mini) var(--font-family-main);

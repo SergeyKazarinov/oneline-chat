@@ -21,7 +21,7 @@
     @include z-index(popup);
     @include padding(20);
     border-radius: 12px;
-    background: var(--white);
+    background: var(--bg-base);
 
     top: 50%;
     left: 50%;

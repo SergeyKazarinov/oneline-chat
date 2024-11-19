@@ -10,7 +10,7 @@
   &_type {
     &_primary,
     &_circle {
-      color: var(--white);
+      color: var(--bg-base);
       background: var(--primary);
       border: none;
 
@@ -45,7 +45,7 @@
     }
 
     &_primary {
-      color: var(--white);
+      color: var(--bg-base);
     }
 
     &_error {
