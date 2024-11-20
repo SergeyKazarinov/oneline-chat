@@ -1,6 +1,6 @@
 export const avatar = (() => {
   return `
-  <button class="avatar">
+  <button class="avatar" data-js="avatar-btn">
     <picture>
       <source srcset="public/images/default.jpg" media="(max-width: 480px)" />
       <source srcset="public/images/default.jpg" media="(max-width: 769px)" />

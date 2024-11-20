@@ -75,4 +75,12 @@
   &__btn_exit {
     width: 160px;
   }
+
+  &__file-name {
+    margin-right: auto;
+    font: var(--font-label);
+    color: var(--secondary);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }

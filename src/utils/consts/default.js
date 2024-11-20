@@ -4,6 +4,7 @@ const INPUT_DEFAULT_VALUE = {
   inputType: "text",
   minLength: 0,
   maxLength: 255,
+  label: "",
 };
 
 const BUTTON_DEFAULT_VALUE = {

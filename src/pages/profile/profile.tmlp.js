@@ -260,6 +260,49 @@ export const profile = (function () {
       </form>
     </section>
 
+    <section class="profile__modal modal" data-js="profile-modal-avatar">
+      <div class="modal__overlay"></div>
+      <form class="profile__edit-container modal__container">
+        <fieldset class="form__fieldset">
+          <legend class="profile__edit-title form__legend">Сменить аватар</legend>
+          <include src="{%${input}%}">
+            {{
+              "inputType": "file",
+              "id": "avatar",
+              "name": "avatar",
+              "placeholder": "Введите текущий пароль",
+              "label": "Выберите файл",
+              "required": "true",
+              "dataJS": "avatar-input"
+            }}
+          </include>
+          <span class="profile__file-name" data-js="file-name"></span>
+        </fieldset>
+
+        <div class="profile__button-container">
+          <include src="{%${button}%}">
+            {{
+              "class": "profile__btn_submit",
+              "variant": "primary",
+              "buttonType": "submit",
+              "dataJS": "submit",
+              "name": "Сохранить"
+            }}
+          </include>
+          <include src="{%${button}%}">
+            {{
+              "class": "profile__btn_exit",
+              "variant": "clear",
+              "color": "error",
+              "buttonType": "button",
+              "dataJS": "exit",
+              "name": "Закрыть"
+            }}
+          </include>
+        </div>
+      </form>
+    </section>
+
   </div>
   `;
 })();
