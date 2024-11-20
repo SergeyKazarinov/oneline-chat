@@ -11,6 +11,7 @@ export const input = (() => {
       placeholder="{{ placeholder }}"
       autocomplete="off"
       required="{{ required }}"
+      data-js="{{ dataJS }}"
     />
     <label class="form__label" for="{{ id }}"> {{ label }} </label>
   </div>`;
