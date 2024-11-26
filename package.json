@@ -14,11 +14,15 @@
   "scripts": {
     "cleanup": "rm -r .parcel-cache dist",
     "copy": "cp -vR ./public/ ./dist/public/",
-    "dev": "parcel index.html & npm run copy",
-    "build": "parcel build index.html & npm run copy"
+    "dev": "npm run copy & parcel index.html",
+    "build": "npm run cleanup & parcel build index.html & npm run copy"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
+    "dotenv": "^16.4.5",
     "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
   }
 }
