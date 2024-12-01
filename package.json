@@ -14,13 +14,8 @@
   "scripts": {
     "cleanup": "rm -r .parcel-cache dist",
     "copy": "cp -vR ./public/ ./dist/public/",
-<<<<<<< HEAD
-    "dev": "npm run copy & parcel index.html",
-    "build": "npm run cleanup & parcel build index.html"
-=======
     "dev": "npm run copy & parcel **.html & parcel build ./src/pages/**/*.html",
-    "build": "npm run cleanup & parcel build **.html & parcel build ./src/pages/**/*.html"
->>>>>>> sprint-1
+    "build": "parcel build **.html"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.13.2",
