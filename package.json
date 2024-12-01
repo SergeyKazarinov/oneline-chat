@@ -15,7 +15,7 @@
     "cleanup": "rm -r .parcel-cache dist",
     "copy": "cp -vR ./public/ ./dist/public/",
     "dev": "npm run copy & parcel **.html & parcel build ./src/pages/**/*.html",
-    "build": "npm run cleanup & parcel build **.html & parcel build ./src/pages/**/*.html"
+    "build": "parcel build **.html"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.13.2",
