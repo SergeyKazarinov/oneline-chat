@@ -3,6 +3,10 @@ import { register } from "./register.tmpl";
 
 const root = document.querySelector("#root");
 
+if (!root) {
+  throw new Error("root not found");
+}
+
 const context = {
   title: "Регистрация",
 };

@@ -1,4 +1,8 @@
 export class Modal {
+  modal: HTMLElement;
+  overlay: HTMLElement | null;
+  exitBtn: HTMLElement | null;
+
   constructor(selector) {
     this.modal = document.querySelector(selector);
     this.overlay = this.modal.querySelector(".modal__overlay");
@@ -13,14 +17,14 @@ export class Modal {
 
   openModal = () => {
     this.modal.classList.add("modal_active");
-    this.overlay.addEventListener("click", this.closeModal);
-    this.exitBtn.addEventListener("click", this.closeModal);
+    this.overlay?.addEventListener("click", this.closeModal);
+    this.exitBtn?.addEventListener("click", this.closeModal);
     document.addEventListener("keydown", this._handleKeydown);
   };
 
   closeModal = () => {
     this.modal.classList.remove("modal_active");
-    this.overlay.removeEventListener("click", this.closeModal);
+    this.overlay?.removeEventListener("click", this.closeModal);
     document.removeEventListener("keydown", this._handleKeydown);
   };
 }
