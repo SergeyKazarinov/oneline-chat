@@ -1,0 +1,9 @@
+.register {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include width-container;
+}
+
+@include form;

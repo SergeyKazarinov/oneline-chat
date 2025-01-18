@@ -1,0 +1,21 @@
+@function padding($key) {
+  @if map-has-key($indents, $key) {
+    @return map-get($indents, $key);
+  }
+
+  @return 4;
+}
+
+@mixin padding($key: 4, $type: false) {
+  @if $type {
+    padding-#{$type}: padding($key);
+  } @else {
+    padding: padding($key);
+  }
+}
+
+/********
+
+@include padding($indents?, type?: 'top' | 'bottom' | 'left' | 'right');
+
+*********/

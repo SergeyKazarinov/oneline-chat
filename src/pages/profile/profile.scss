@@ -1,0 +1,86 @@
+.profile {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    @include width-container;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include margin(32, "top");
+    font: var(--font-h3);
+  }
+
+  &__info {
+    width: 100%;
+    @include margin(40, "top");
+    display: flex;
+    flex-direction: column;
+    @include gap(8);
+  }
+
+  &__buttons {
+    align-self: start;
+    @include margin(32, "top");
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+  }
+
+  &__button-item {
+    width: 100%;
+    border-bottom: 1px solid var(--bg-secondary-20);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__modal {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+
+  &__edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include gap(8);
+    // @include width-container;
+  }
+
+  &__edit-title {
+    font: var(--font-text-bold);
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include margin(40, "top");
+  }
+
+  &__btn_submit,
+  &__btn_exit {
+    width: 160px;
+  }
+
+  &__file-name {
+    margin-right: auto;
+    font: var(--font-label);
+    color: var(--secondary);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

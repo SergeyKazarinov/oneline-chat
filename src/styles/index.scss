@@ -1,0 +1,35 @@
+@import "./normalize";
+@import "./fonts/fonts";
+@import "./variables";
+@import "./reset";
+
+// maps
+@import "./maps/indents";
+
+// base
+@import "./base/gap";
+@import "./base/margin";
+@import "./base/padding";
+@import "./base/screen";
+@import "./base/z-index";
+
+// mixins
+@import "./mixins/form";
+@import "./mixins/page";
+@import "./mixins/container.scss";
+
+// ui-kit
+@import "../components/ui-kit/button/button";
+@import "../components/ui-kit/input/input";
+@import "../components/ui-kit/back-button/back-button.scss";
+@import "../components/ui-kit/avatar/avatar.scss";
+
+// components
+@import "../components/service-page/service-page.scss";
+@import "../components/user-info-field/user-info-filed.scss";
+@import "../components/modal/modal.scss";
+
+//pages
+@import "../pages/login/login";
+@import "../pages/register/register";
+@import "../pages/profile/profile.scss";

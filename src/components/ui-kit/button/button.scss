@@ -1,0 +1,55 @@
+.button {
+  @include padding(12);
+  font: var(--font-link);
+  transition: var(--hover-transition);
+
+  &:active {
+    transform: scale(var(--scale-animation));
+  }
+
+  &_type {
+    &_primary,
+    &_circle {
+      color: var(--bg-base);
+      background: var(--primary);
+      border: none;
+
+      &:hover {
+        background: var(--primary-20);
+      }
+    }
+
+    &_primary {
+      border-radius: 14px;
+    }
+
+    &_clear {
+      background: none;
+      border: none;
+      color: var(--primary);
+
+      &:hover {
+        color: var(--primary-20);
+      }
+    }
+
+    &_circle {
+      border-radius: 50%;
+      @include padding(0);
+    }
+  }
+
+  &_text-color {
+    &_clear {
+      color: var(--primary);
+    }
+
+    &_primary {
+      color: var(--bg-base);
+    }
+
+    &_error {
+      color: var(--error);
+    }
+  }
+}

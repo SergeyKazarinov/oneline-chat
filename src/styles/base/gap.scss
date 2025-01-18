@@ -1,0 +1,21 @@
+@function gap($key) {
+  @if map-has-key($indents, $key) {
+    @return map-get($indents, $key);
+  }
+
+  @return 4;
+}
+
+@mixin gap($key: 4, $type: false) {
+  @if $type {
+    #{$type}-gap: gap($key);
+  } @else {
+    gap: gap($key);
+  }
+}
+
+/********
+
+@include gap($indents?, type?: 'row' | 'column');
+
+*********/

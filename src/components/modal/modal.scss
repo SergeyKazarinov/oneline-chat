@@ -1,0 +1,30 @@
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--hover-transition);
+  @include z-index(overlay);
+
+  &_active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay);
+  }
+
+  &__container {
+    position: relative;
+    @include width-container;
+    @include z-index(popup);
+    @include padding(20);
+    border-radius: 12px;
+    background: var(--bg-base);
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
