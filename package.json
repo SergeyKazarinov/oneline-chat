@@ -19,8 +19,11 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.13.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
     "dotenv": "16.4.5",
-    "parcel": "2.13.2"
+    "parcel": "2.13.2",
+    "ts-node": "^10.9.2"
   },
   "dependencies": {
     "express": "4.21.1"
