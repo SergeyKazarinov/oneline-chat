@@ -1,5 +1,5 @@
 import Templator from "../../core/templator/Temlator";
-import { errorPage } from "./error-page.tmlp";
+import errorPage from "./error-page.tmlp";
 
 const root = document.querySelector("#root");
 

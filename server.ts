@@ -26,6 +26,6 @@ Object.entries(PATH_CONFIG).forEach(([key, value]) => {
   });
 });
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
 });

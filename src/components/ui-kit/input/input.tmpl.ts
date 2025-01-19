@@ -1,4 +1,4 @@
-export const input = (() => {
+const input = (function() {
   return `
   <div class="form__input-wrapper">
     <input
@@ -14,5 +14,8 @@ export const input = (() => {
       data-js="{{ dataJS }}"
     />
     <label class="form__label" for="{{ id }}"> {{ label }} </label>
-  </div>`;
+  </div>
+  `;
 })();
+
+export default input;

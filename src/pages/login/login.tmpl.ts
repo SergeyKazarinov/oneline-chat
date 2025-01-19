@@ -1,7 +1,7 @@
-import { button } from "../../components/ui-kit/button/button.tmpl";
-import { input } from "../../components/ui-kit/input/input.tmpl";
+import button from "../../components/ui-kit/button/button.tmpl";
+import input from "../../components/ui-kit/input/input.tmpl";
 
-export const login = (function () {
+const login = (function() {
   return `
     <section class="login">
       <form id="login" class="form">
@@ -54,3 +54,5 @@ export const login = (function () {
     </section>
   `;
 })();
+
+export default login;

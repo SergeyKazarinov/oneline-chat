@@ -1,30 +1,34 @@
-export class Modal {
-  modal: HTMLElement;
-  overlay: HTMLElement | null;
-  exitBtn: HTMLElement | null;
+class Modal {
+  modal: HTMLElement | null;
 
-  constructor(selector) {
+  overlay: HTMLElement | null | undefined;
+
+  exitBtn: HTMLElement | null | undefined;
+
+  constructor(selector: string) {
     this.modal = document.querySelector(selector);
-    this.overlay = this.modal.querySelector(".modal__overlay");
-    this.exitBtn = this.modal.querySelector("[data-js=exit]");
+    this.overlay = this.modal?.querySelector(".modal__overlay");
+    this.exitBtn = this.modal?.querySelector("[data-js=exit]");
   }
 
-  _handleKeydown = (e) => {
+  private handleKeydown = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       this.closeModal();
     }
   };
 
-  openModal = () => {
-    this.modal.classList.add("modal_active");
+  public openModal = () => {
+    this.modal?.classList.add("modal_active");
     this.overlay?.addEventListener("click", this.closeModal);
     this.exitBtn?.addEventListener("click", this.closeModal);
-    document.addEventListener("keydown", this._handleKeydown);
+    document.addEventListener("keydown", this.handleKeydown);
   };
 
-  closeModal = () => {
-    this.modal.classList.remove("modal_active");
+  public closeModal = () => {
+    this.modal?.classList.remove("modal_active");
     this.overlay?.removeEventListener("click", this.closeModal);
-    document.removeEventListener("keydown", this._handleKeydown);
+    document.removeEventListener("keydown", this.handleKeydown);
   };
 }
+
+export default Modal;

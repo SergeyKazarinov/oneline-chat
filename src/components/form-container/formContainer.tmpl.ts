@@ -1,7 +1,7 @@
-import { button } from "../ui-kit/button/button.tmpl";
-import { input } from "../ui-kit/input/input.tmpl";
+import button from "../ui-kit/button/button.tmpl";
+import input from "../ui-kit/input/input.tmpl";
 
-export const formContainer = (() => {
+const formContainer = (function() {
   return `
     <form id="login" class="form">
       <fieldset class="form__fieldset">
@@ -47,5 +47,8 @@ export const formContainer = (() => {
           }}
         </include>
       </div>
-    </form>`;
+    </form>
+  `;
 })();
+
+export default formContainer;

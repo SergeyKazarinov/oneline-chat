@@ -1,5 +1,5 @@
 import Templator from "../../core/templator/Temlator";
-import { register } from "./register.tmpl";
+import register from "./register.tmpl";
 
 const root = document.querySelector("#root");
 

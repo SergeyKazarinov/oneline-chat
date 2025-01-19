@@ -1,5 +1,5 @@
 import Templator from "../../core/templator/Temlator";
-import { login } from "./login.tmpl";
+import login from "./login.tmpl";
 
 const root = document.querySelector("#root");
 

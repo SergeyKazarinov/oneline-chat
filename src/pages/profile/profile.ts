@@ -1,7 +1,6 @@
-import { Modal } from "../../components/modal/Modal";
+import Modal from "../../components/modal/Modal";
 import Templator from "../../core/templator/Temlator";
-
-import { profile } from "./profile.tmlp";
+import profile from "./profile.tmlp";
 
 const root = document.querySelector("#root");
 

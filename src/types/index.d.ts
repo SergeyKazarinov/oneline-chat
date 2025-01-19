@@ -1,5 +1,5 @@
 type TContext = {
-  [key: string]: string | number | boolean | TContext;
+  [key: string]: string | number | boolean | TContext | undefined | (() => void);
 };
 
 type TWindow = Window & {

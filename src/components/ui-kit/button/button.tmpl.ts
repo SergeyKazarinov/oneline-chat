@@ -1,4 +1,4 @@
-export const button = (() => {
+const button = (function() {
   return `
   <button
     type="{{ buttonType }}"
@@ -6,8 +6,11 @@ export const button = (() => {
     data-js="{{dataJS}}"
   >
     {{ name }}
-  </button>`;
+  </button>
+`;
 })();
+
+export default button;
 
 // variant: primary | clear | circle
 // color: primary | clear | error

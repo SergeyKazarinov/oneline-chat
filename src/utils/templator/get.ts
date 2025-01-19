@@ -9,12 +9,12 @@
 const get = (
   obj: TContext,
   path: string,
-  defaultValue: string | number | boolean | Function
+  defaultValue: string | number | boolean
 ) => {
   const keys = path.split(".");
 
   let result = obj;
-
+  // eslint-disable-next-line no-restricted-syntax
   for (const key of keys) {
     result = result[key] as TContext;
 

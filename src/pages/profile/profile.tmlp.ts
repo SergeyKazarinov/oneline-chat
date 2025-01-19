@@ -1,11 +1,11 @@
-import { avatar } from "../../components/ui-kit/avatar/avatar.tmpl";
-import { backButton } from "../../components/ui-kit/back-button/back-button.tmpl";
-import { button } from "../../components/ui-kit/button/button.tmpl";
-import { input } from "../../components/ui-kit/input/input.tmpl";
-import { userInfoField } from "../../components/user-info-field/user-info-field.tmpl";
+import avatar from "../../components/ui-kit/avatar/avatar.tmpl";
+import backButton from "../../components/ui-kit/back-button/back-button.tmpl";
+import button from "../../components/ui-kit/button/button.tmpl";
+import input from "../../components/ui-kit/input/input.tmpl";
+import userInfoField from "../../components/user-info-field/user-info-field.tmpl";
 
-export const profile = (function () {
-  return `
+const profile = (function() {
+  return`
   <div class="profile">
     <include src="{%${backButton}%}"></include>
 
@@ -304,5 +304,7 @@ export const profile = (function () {
     </section>
 
   </div>
-  `;
+`;
 })();
+
+export default profile;

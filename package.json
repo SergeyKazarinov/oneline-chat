@@ -15,17 +15,35 @@
     "cleanup": "rm -r .parcel-cache dist",
     "copy": "cp -vR ./public/ ./dist/public/",
     "dev": "npm run copy & parcel **.html & parcel build ./src/pages/**/*.html",
-    "build": "parcel build **.html"
+    "build": "npm run copy & parcel build *.html",
+    "server": "npm run build && ts-node server.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier .",
+    "format:fix": "prettier . --write"
   },
   "devDependencies": {
+    "@eslint/js": "^9.18.0",
     "@parcel/transformer-sass": "^2.13.2",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.7",
-    "dotenv": "16.4.5",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.14.0",
     "parcel": "2.13.2",
-    "ts-node": "^10.9.2"
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.20.0"
   },
   "dependencies": {
+    "dotenv": "16.4.5",
     "express": "4.21.1"
   }
 }

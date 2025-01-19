@@ -1,5 +1,5 @@
 import Templator from "../../core/templator/Temlator";
-import { notFound } from "./not-found.tmlp";
+import notFound from "./not-found.tmlp";
 
 const root = document.querySelector("#root");
 

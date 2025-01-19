@@ -1,4 +1,4 @@
-export const userInfoField = (() => {
+const userInfoField = (function() {
   return `
   <{{ as }} class="userInfoFiled">
     <span class="userInfoFiled__key">{{ key }}</span>
@@ -6,3 +6,5 @@ export const userInfoField = (() => {
   </{{ as }}>
   `;
 })();
+
+export default userInfoField;

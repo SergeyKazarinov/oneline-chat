@@ -1,6 +1,6 @@
-import { servicePage } from "../../components/service-page/service-page.tmpl";
+import servicePage  from "../../components/service-page/service-page.tmpl";
 
-export const errorPage = (function () {
+const errorPage = (function() {
   return `
     <include src="{%${servicePage}%}">
       {{
@@ -12,3 +12,5 @@ export const errorPage = (function () {
     </include>
   `;
 })();
+
+export default errorPage;

@@ -8,12 +8,13 @@ import {
   TEMPLATE_REGEXP,
   SRC_REPLACE_ATTRIBUTE_REGEXP,
 } from "../../utils/consts/regexp";
-import get from "../../utils/templator/get";
+import get from "../../utils/templator/get"
 
 class Templator {
-  private _template: string;
+  private template: string;
+
   constructor(template: string) {
-    this._template = template;
+    this.template = template
   }
 
   /**
@@ -23,7 +24,7 @@ class Templator {
    * @returns {string} - скомпилированный шаблон
    */
   public compile(context: TContext): string {
-    return this._compileTemplate(context);
+    return this.compileTemplate(context);
   }
 
   /**
@@ -32,7 +33,7 @@ class Templator {
    * @param {string} includeData - строка с JSON
    * @returns {TContext} - объект
    */
-  private _getContextJSON(includeData: string): string {
+  private static getContextJSON(includeData: string): string {
     if (!includeData) return "{}";
 
     return includeData.replace(DOUBLE_FIGURE_REGEXP, (match) =>
@@ -46,7 +47,7 @@ class Templator {
    * @param {JSON} localsString - строка с JSON
    * @returns {TContext} - объект
    */
-  private _getObjectFromJSON(localsString: string): TContext {
+  private static getObjectFromJSON(localsString: string): TContext {
     try {
       return JSON.parse(localsString);
     } catch (error) {
@@ -62,7 +63,7 @@ class Templator {
    * @param {string} includeTag - тег <include>
    * @returns {string} - данные внутри тега <include>
    */
-  private _getIncludeData(includeTag: string): string {
+  private static getIncludeData(includeTag: string): string {
     const removedTemplateAtr = includeTag.replace(SRC_CONTENT_REGEXP, "");
     const includeData = removedTemplateAtr.replace(INCLUDE_REPLACE_REGEXP, "");
     return includeData.trim();
@@ -74,7 +75,7 @@ class Templator {
    * @param {string} includeTag
    * @returns {string}
    */
-  private _getTemplateNode(includeTag: string): string {
+  private static getTemplateNode(includeTag: string): string {
     const template = includeTag.match(SRC_ATTRIBUTE_REGEXP);
 
     return template
@@ -89,25 +90,26 @@ class Templator {
    * @param {TContext} params - параметры из тега <include>
    * @returns {string} - тот же шаблон, но с подставленными значениями
    */
-  private _applyParamsToTemplate(template: string, params: TContext): string {
-    let key = null;
+  private static applyParamsToTemplate(template: string, params: TContext): string {
     let tmpl = template;
-    while ((key = TEMPLATE_REGEXP.exec(template))) {
-      if (key[1]) {
-        const tmplValue = key[1].trim();
+    let matches = TEMPLATE_REGEXP.exec(template);
+
+    while (matches) {
+      if (matches[1]) {
+        const tmplValue = matches[1].trim();
         const data = get(params, tmplValue, GLOBAL_DEFAULT_VALUE[tmplValue]);
+
         if (typeof data === "function") {
           (window as TWindow)[tmplValue] = data;
-
           tmpl = tmpl.replace(
-            new RegExp(key[0], "gi"),
-            `window.${key[1].trim()}()`
+            new RegExp(matches[0], "gi"),
+            `window.${matches[1].trim()}()`
           );
-          continue;
+        } else {
+          tmpl = tmpl.replace(new RegExp(matches[0], "gi"), data as string);
         }
-
-        tmpl = tmpl.replace(new RegExp(key[0], "gi"), data as string);
       }
+      matches = TEMPLATE_REGEXP.exec(template);
     }
 
     return tmpl;
@@ -120,14 +122,14 @@ class Templator {
    * @param {string} includeTag - тег <include>
    * @returns {string} - корневой шаблон с замененным тегом <include>
    */
-  private _compileInclude(template: string, includeTag: string): string {
-    const includeData = this._getIncludeData(includeTag);
-    const templateNode = this._getTemplateNode(includeTag);
+  private static compileInclude(template: string, includeTag: string): string {
+    const includeData = Templator.getIncludeData(includeTag);
+    const templateNode = Templator.getTemplateNode(includeTag);
     if (!templateNode) return '';
 
-    const contextJSON = this._getContextJSON(includeData);
-    const contextObject = this._getObjectFromJSON(contextJSON);
-    const renderTemplate = this._applyParamsToTemplate(
+    const contextJSON = Templator.getContextJSON(includeData);
+    const contextObject = Templator.getObjectFromJSON(contextJSON);
+    const renderTemplate = Templator.applyParamsToTemplate(
       templateNode,
       contextObject
     );
@@ -140,17 +142,17 @@ class Templator {
    * @param {TContext} context
    * @returns {string}
    */
-  private _compileTemplate(context: TContext): string {
-    let tmpl = this._template; // корневой шаблон в виде строки
+  private compileTemplate(context: TContext): string {
+    let tmpl = this.template; // корневой шаблон в виде строки
 
     const includeMatches = tmpl.match(INCLUDE_REGEXP); // находим все инклюсдсы
     if (includeMatches) {
       includeMatches.forEach((includeTag) => {
-        tmpl = this._compileInclude(tmpl, includeTag);
+        tmpl = Templator.compileInclude(tmpl, includeTag);
       });
     }
 
-    return this._applyParamsToTemplate(tmpl, context);
+    return Templator.applyParamsToTemplate(tmpl, context);
   }
 }
 
