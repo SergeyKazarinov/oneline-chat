@@ -82,4 +82,22 @@
       }
     }
   }
+
+  &__input_type {
+    &_search {
+      background-color: var(--bg-secondary);
+      border-radius: 0.5rem;
+      border: none;
+      color: var(--text-base);
+      padding: 0.5rem 1rem;
+
+      ~ .form__label {
+        display: none;
+      }
+
+      &:not(:focus-visible).form__input::placeholder {
+        opacity: 1;
+      }
+    }
+  }
 }

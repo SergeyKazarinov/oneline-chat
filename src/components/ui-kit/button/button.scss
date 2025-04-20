@@ -37,6 +37,16 @@
       border-radius: 50%;
       @include padding(0);
     }
+
+    &_secondary {
+      color: var(--secondary);
+      background: none;
+      border: none;
+
+      &:hover {
+        color: var(--secondary-20);
+      }
+    }
   }
 
   &_text-color {
@@ -46,6 +56,10 @@
 
     &_primary {
       color: var(--bg-base);
+    }
+
+    &_secondary {
+      color: var(--secondary);
     }
 
     &_error {

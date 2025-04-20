@@ -1,4 +1,4 @@
-const button = (function() {
+const button = (function () {
   return `
   <button
     type="{{ buttonType }}"
@@ -12,5 +12,9 @@ const button = (function() {
 
 export default button;
 
-// variant: primary | clear | circle
-// color: primary | clear | error
+// buttonType: button | submit | reset
+// variant: primary | clear | circle | link
+// color: primary | secondary | clear | error
+// class: string
+// dataJS: string
+// name: string
