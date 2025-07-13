@@ -40,6 +40,54 @@ const chatPage = (function () {
                 12:00
               </span>
               <span class="chat__aside-contacts-list-item-message">
+              Друзья, у меня для вас особенный выпуск новостей!...
+              </span>
+              <span class="chat__aside-contacts-list-item-badge">
+                1
+              </span>
+            </li>
+            <li class="chat__aside-contacts-list-item">
+              <div class="chat__aside-contacts-list-item-avatar">
+              </div>
+              <span class="chat__aside-contacts-list-item-name">
+                Имя
+              </span>
+              <span class="chat__aside-contacts-list-item-time">
+                12:00
+              </span>
+              <span class="chat__aside-contacts-list-item-message">
+                Сообщение
+              </span>
+              <span class="chat__aside-contacts-list-item-badge">
+                1
+              </span>
+            </li>
+            <li class="chat__aside-contacts-list-item">
+              <div class="chat__aside-contacts-list-item-avatar">
+              </div>
+              <span class="chat__aside-contacts-list-item-name">
+                Имя
+              </span>
+              <span class="chat__aside-contacts-list-item-time">
+                12:00
+              </span>
+              <span class="chat__aside-contacts-list-item-message">
+                Сообщение
+              </span>
+              <span class="chat__aside-contacts-list-item-badge">
+                1
+              </span>
+            </li>
+            <li class="chat__aside-contacts-list-item">
+              <div class="chat__aside-contacts-list-item-avatar">
+              </div>
+              <span class="chat__aside-contacts-list-item-name">
+                Имя
+              </span>
+              <span class="chat__aside-contacts-list-item-time">
+                12:00
+              </span>
+              <span class="chat__aside-contacts-list-item-message">
                 Сообщение
               </span>
               <span class="chat__aside-contacts-list-item-badge">
